@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ComplexNumbersComprehensiveProgram
 {
-    static class AngleOperations
+    public static class AngleOperations
     {
 
         // --- (Degree <---> Radian) convertions Part -------------------------------------------
@@ -14,7 +14,7 @@ namespace ComplexNumbersComprehensiveProgram
         }
         public static double Deg2Rad(double deg)
         {
-            return (2 * Math.PI) * deg / 360;
+            return (2 * Math.PI) * (double) deg / 360;
         }
         
 
@@ -25,7 +25,11 @@ namespace ComplexNumbersComprehensiveProgram
 
             if (angle < 0)
             {
-                return (angle + 1 + oneCycleRad * (GetNumberOfCyclesRad(angle)));
+                double argNew= (angle + oneCycleRad * (1+GetNumberOfCyclesRad(angle)));
+                
+                // to prevent negative full cycles
+                // (becuase negative full cycles make argNew = 360 always)
+                return RadianNormalization(argNew);
             }
 
             else if (angle >= oneCycleRad)
@@ -51,7 +55,11 @@ namespace ComplexNumbersComprehensiveProgram
         {
             if (argument < 0)
             {
-                return (argument + 1 + 360 * (GetNumberOfCyclesDeg(argument)));
+                double argNew=(argument + 360 * (1+GetNumberOfCyclesDeg(argument)));
+
+                // to prevent negative full cycles
+                // (becuase negative full cycles make argNew = 360 always)
+                return DegreeNormalization(argNew); 
             }
 
             else if (argument >= 360)
@@ -65,7 +73,7 @@ namespace ComplexNumbersComprehensiveProgram
         private static int GetNumberOfCyclesDeg(double Theta)
         {
             if (Math.Abs(Theta) >= 360)
-                return (int)Math.Floor(Theta / 360);
+                return (int)Math.Floor(Math.Abs((double)Theta / 360));
             else return 0;
         }
 
