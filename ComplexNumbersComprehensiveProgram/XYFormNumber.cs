@@ -6,8 +6,17 @@ namespace ComplexNumbersComprehensiveProgram
 {
     public class XYFormNumber
     {
-        public double RealPart;
-        public double ImaginaryPart;
+        private double RealPart;
+        private double ImaginaryPart;
+
+        public double GetRealPart()
+        {
+            return this.RealPart;
+        }
+        public double GetImaginaryPart()
+        {
+            return this.ImaginaryPart;
+        }
 
         public XYFormNumber(double realPart, double imaginaryPart)
         {

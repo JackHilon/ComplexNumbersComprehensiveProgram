@@ -6,8 +6,18 @@ namespace ComplexNumbersComprehensiveProgram
 {
     public class PolarDegreeNumber
     {
-        public double Magnitude;
-        public double Argument;
+        private double Magnitude;
+        private double Argument;
+
+        public double GetMagnitude()
+        {
+            return this.Magnitude;
+        }
+
+        public double GetArgument()
+        {
+            return this.Argument;
+        }
 
         public PolarDegreeNumber(double magnitude, double argument)
         {
