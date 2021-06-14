@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ComplexNumbersComprehensiveProgram
 {
-    class BasicFourOperationsXY
+    public class BasicFourOperationsXY
     {
         public static XYFormNumber Add(XYFormNumber number1, XYFormNumber number2)
         {
