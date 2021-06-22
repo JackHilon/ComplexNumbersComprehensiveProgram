@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ComplexNumbersComprehensiveProgram
 {
-    class BasicFourOperationsPolarRadian
+    public static class BasicFourOperationsPolarRadian
     {
         public static PolarRadianNumber Add(PolarRadianNumber number1, PolarRadianNumber number2)
         {
@@ -26,7 +26,7 @@ namespace ComplexNumbersComprehensiveProgram
 
         public static PolarRadianNumber ScalarMult(double scalar, PolarRadianNumber number)
         {
-            double mag = scalar * number.GetArgument();
+            double mag = scalar * number.GetMagnitude();
             double arg = number.GetArgument();
 
             var result = new PolarRadianNumber(mag, arg);

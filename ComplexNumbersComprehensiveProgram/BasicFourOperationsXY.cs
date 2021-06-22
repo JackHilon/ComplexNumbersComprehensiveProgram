@@ -96,5 +96,7 @@ namespace ComplexNumbersComprehensiveProgram
                     return double.NaN;
             }
         }
-    }
+
+
+    }// end class
 }

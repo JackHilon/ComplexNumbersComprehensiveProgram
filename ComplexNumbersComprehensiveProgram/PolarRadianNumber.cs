@@ -21,7 +21,7 @@ namespace ComplexNumbersComprehensiveProgram
 
         public PolarRadianNumber(double magnitude, double argument)
         {
-            this.Magnitude = magnitude;
+            this.Magnitude = Math.Abs(magnitude);
             this.Argument = AngleOperations.RadianNormalization(argument);
         }
 
